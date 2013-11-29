@@ -16,13 +16,10 @@ def insertionsort (data):
     for j in range(1, len(data)):
         key=data[j]
         i=j-1
-        while i >= 0:
-            if data[i] > key:
-                data[i+1] = data[i]
-                data[i] = key
-                i = i - 1
-            else:
-                break
+        while i >= 0 and (data[i] > key):
+            data[i+1] = data[i]
+            data[i] = key
+            i = i - 1
 
 if __name__ == "__main__":
     insertionsort (data)

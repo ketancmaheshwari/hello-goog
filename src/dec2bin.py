@@ -1,17 +1,15 @@
 #!/bin/env python
 
-import numpy as np
+import sys
 
-#controls printing array corners
-#np.set_printoptions(threshold='nan')
+#still buggy
 
-zero=np.zeros(10)
-one=np.ones(20)
+binum=""
 
-print zero
-print one
+decnum=int(sys.argv[1])
+print decnum
+while decnum > 1:
+    binum=binum + str(decnum % 2)
+    decnum = decnum / 2
 
-# read file into a numpy array
-data = np.loadtxt('../data/strlist10k.txt', dtype='string')
-
-print data
+print binum[::-1]

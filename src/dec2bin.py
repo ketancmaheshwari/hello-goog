@@ -8,7 +8,7 @@ binum=""
 
 decnum=int(sys.argv[1])
 print decnum
-while decnum > 1:
+while decnum > 0:
     binum=binum + str(decnum % 2)
     decnum = decnum / 2
 

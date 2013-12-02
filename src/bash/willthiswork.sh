@@ -1,6 +1,8 @@
 #! /bin/bash
 
 set -x
+trap 'echo "user says die ..."' SIGTERM
+sleep 100
 # Read characters from terminal one at a time.
 echo -n "Enter a character: "
 stty cbreak         # or  stty raw

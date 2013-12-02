@@ -3,12 +3,20 @@
 #mainly for sys.argv[], sys.argv[0] is the name of the program
 import sys
 
-#mainly for arrays
-import numpy as np
+def makebold(fn):
+    def wrapped():
+        return "<b>" + fn() + "</b>"
+    return wrapped
 
-def hello (name):
-    print 'Hello there '+ name
+def makeitalic(fn):
+    def wrapped():
+        return "<i>" + fn() + "</i>"
+    return wrapped
+
+@makebold
+@makeitalic
+def hello():
+    return "hello world!"
 
 if __name__=='__main__':
-    #call the routine you'd like to run as main
-    hello (sys.argv[1])
+    print hello()

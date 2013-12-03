@@ -6,9 +6,16 @@ import sys
 #mainly for arrays
 import numpy as np
 
-def hello (name):
-    print 'Hello there '+ name
+#TODO
+def print_args(*args):
+    for i, item  in enumerate(args):
+        print '{}:{}'.format (i, item)
+
+def print_kwargs(**kwargs):
+    for name, value in kwargs.items():
+        print '{}:{}'.format(name, value)
 
 if __name__=='__main__':
     #call the routine you'd like to run as main
-    hello (sys.argv[1])
+    print_args('apple', 'mango', 'banana')
+    print_kwargs(fruit='apple', vegetable='potato')

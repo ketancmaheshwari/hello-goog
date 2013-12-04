@@ -70,6 +70,7 @@ for i in `/bin/ls -1 *.csv`
 do
  #remove double commas
  sed -i 's/,//' $i
+ #insert hline as header
  sed -i "1 i $HLINE" $i
  #remove blank lines (ie. lines which do not have a comma)
  sed -i -n -e '/,/p' $i

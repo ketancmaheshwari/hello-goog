@@ -25,7 +25,6 @@ def mergesort(list):
     return merge(left, right)
 
 def main():
-    #data = [43,76,19,255]
     data = [int(data.strip()) for data in open('../../data/numlist10.txt')]
     sdata = mergesort(data)
     print sdata

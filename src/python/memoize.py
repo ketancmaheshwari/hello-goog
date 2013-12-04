@@ -8,7 +8,7 @@ import numpy as np
 
 #TODO
 
-def hello (name):
+def memoize_op (data):
     print 'Hello there '+ name
 
 if __name__=='__main__':

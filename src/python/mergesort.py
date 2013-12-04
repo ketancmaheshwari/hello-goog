@@ -1,50 +1,34 @@
 #!/usr/bin/env python
 
-import numpy as np
-
-
+# Assume the left and right lists are sorted
 def merge(left, right):
     result = []
     i ,j = 0, 0
     while i < len(left) and j < len(right):
-        #print('left[i]: {} right[j]: {}'.format(left[i],right[j]))
         if left[i] <= right[j]:
-            #print('Appending {} to the result'.format(left[i]))           
             result.append(left[i])
-            #print('result now is {}'.format(result))
             i += 1
-            #print('i now is {}'.format(i))
         else:
-            #print('Appending {} to the result'.format(right[j]))
             result.append(right[j])
-            #print('result now is {}'.format(result))
             j += 1
-            #print('j now is {}'.format(j))
-    #print('One of the list is exhausted. Adding the rest of one of the lists.')
+    #one of the left and right exhausted here
     result += left[i:]
     result += right[j:]
-    #print('result now is {}'.format(result))
     return result
 
-def mergesort(L):
-    #print('====')
-    #print('mergesort on {}'.format(L))
-    if len(L) < 2:
-        #print('length is 1: returning the list without changing')
-        return L
-    middle = len(L) / 2
-    #print('calling mergesort on {}'.format(L[:middle]))
-    left = mergesort(L[:middle])
-    #print('calling mergesort on {}'.format(L[middle:]))
-    right = mergesort(L[middle:])
-    #print('Merging left: {} and right: {}'.format(left,right))
-    out = merge(left, right)
-    #print('exiting mergesort on {}'.format(L))
-    #print('#====')
-    return out
+def mergesort(list):
+    if len(list) < 2:
+        return list
+    middle = len(list) / 2
+    left = mergesort(list[:middle])
+    right = mergesort(list[middle:])
+    return merge(left, right)
+
+def main():
+    #data = [43,76,19,255]
+    data = [int(data.strip()) for data in open('../../data/numlist10.txt')]
+    sdata = mergesort(data)
+    print sdata
 
 if __name__=='__main__':
-    #data = np.loadtxt("../../data/numlist10.txt")
-    with open("../../data/numlist10.txt") as f:
-        data=f.read().splitlines()
-    mergesort(data)
+    main()

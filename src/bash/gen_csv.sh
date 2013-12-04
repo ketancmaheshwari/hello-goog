@@ -3,6 +3,7 @@
 NUM_YRS=$1
 ALINE="grid_ID,"
 
+#concatenate string grid_ID with commas
 for i in `seq 1 $NUM_YRS`
 do
   ALINE=$ALINE$i","
@@ -11,7 +12,7 @@ done
 #remove the last comma from the header line
 HLINE=`echo $ALINE | sed 's/,$//'`
 
-for i in `find summaries/ -iname *.OUT`
+for i in `find summaries/ -type f -iname *.OUT`
 do
 bname=`basename $i Summary.OUT`
 #echo $bname

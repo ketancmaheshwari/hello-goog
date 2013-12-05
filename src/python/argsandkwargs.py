@@ -6,7 +6,6 @@ import sys
 #mainly for arrays
 import numpy as np
 
-#TODO
 def print_args(*args):
     for i, item  in enumerate(args):
         print '{}:{}'.format (i, item)

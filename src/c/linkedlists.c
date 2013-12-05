@@ -13,6 +13,10 @@ typedef struct node node;
 /* start main */
 int main(void){
 
+node* create(int numnodes);
+int insert(int loc, node* item);
+int delete(int loc);
+
 node* head;
 printf ("Test\n");
 

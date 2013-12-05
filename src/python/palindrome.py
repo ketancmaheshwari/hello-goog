@@ -6,7 +6,6 @@ import sys
 #mainly for arrays
 import numpy as np
 
-#ToDo: use traditional logic
 def palindrome (name):
     flag=True
     #find length of string

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Assume the left and right lists are sorted
-def merge(left, right):
+def quick(left, right):
     result = []
     i ,j = 0, 0
     while i < len(left) and j < len(right):
@@ -16,7 +16,7 @@ def merge(left, right):
     result += right[j:]
     return result
 
-def mergesort(list):
+def quicksort(list):
     if len(list) < 2:
         return list
     middle = len(list) / 2

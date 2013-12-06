@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
 def heapsort(list):
+    for item in list:
+        print item
     #TODO: heapsort
-    print "Do heapsort"
-
+    return list
 def main():
     data = [int(data.strip()) for data in open('../../data/numlist10.txt')]
-    sdata = mergesort(data)
+    sdata = heapsort(data)
+
     print sdata
 
 if __name__=='__main__':

@@ -5,24 +5,33 @@ def quicksort(array, lower, upper):
         return
 
     pivot_pos=partition(array, lower, upper)
+
     quicksort(array, lower, pivot_pos - 1)
 
     quicksort(array, pivot_pos + 1, upper)
 
+
 def partition(array, lower, upper):
+    
     pivot=array[upper] # why it does not work when pivot is lower?
+
     splitter=lower - 1
     
     for end in xrange(lower, upper):
         if array[end] <= pivot:
             splitter = splitter + 1
-            array[splitter],array[end]=array[end],array[splitter]
+            #print "splitter: %d, end: %d, array[splitter]: %d, array[end]: %d" % (splitter, end, array[splitter], array[end])
+            if splitter != end:
+                array[splitter],array[end]=array[end],array[splitter]
     
     array[splitter+1], array[upper] = array[upper], array[splitter+1]
+    #print array
     return splitter+1
 
+
 def main():
-    data = [7,1,5,9,2]
+    data = [9,5,7,10,12,18,21,6,15]
+    print data
     quicksort(data, 0, len(data)-1)
     print data
 

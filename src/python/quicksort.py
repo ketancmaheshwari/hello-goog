@@ -1,33 +1,30 @@
 #!/usr/bin/env python
 
-# Assume the left and right lists are sorted
-def quick(left, right):
-    result = []
-    i ,j = 0, 0
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
-    #one of the left and right exhausted here
-    result += left[i:]
-    result += right[j:]
-    return result
+def quicksort(array, lower, upper):
+    if lower >= upper:
+        return
 
-def quicksort(list):
-    if len(list) < 2:
-        return list
-    middle = len(list) / 2
-    left = mergesort(list[:middle])
-    right = mergesort(list[middle:])
-    return merge(left, right)
+    pivot_pos=partition(array, lower, upper)
+    quicksort(array, lower, pivot_pos - 1)
+
+    quicksort(array, pivot_pos + 1, upper)
+
+def partition(array, lower, upper):
+    pivot=array[upper] # why it does not work when pivot is lower?
+    splitter=lower - 1
+    
+    for end in xrange(lower, upper):
+        if array[end] <= pivot:
+            splitter = splitter + 1
+            array[splitter],array[end]=array[end],array[splitter]
+    
+    array[splitter+1], array[upper] = array[upper], array[splitter+1]
+    return splitter+1
 
 def main():
-    data = [int(data.strip()) for data in open('../../data/numlist10.txt')]
-    sdata = mergesort(data)
-    print sdata
+    data = [7,1,5,9,2]
+    quicksort(data, 0, len(data)-1)
+    print data
 
 if __name__=='__main__':
     main()

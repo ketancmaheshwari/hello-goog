@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 def parent(i):
-    return i/2
+    return (i>>1)
 
 def left(i):
-    return 2*i
+    return (i<<1)
 
 def right(i):
-    return 2*i + 1
+    return (2<<1) + 1
 
 def heapify(alist, i, n):
     largest=i

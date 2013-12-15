@@ -1,47 +1,44 @@
 #!/usr/bin/env python
 
-def parent(i):
-    return (i>>1)
-
-def left(i):
-    return (i<<1)
-
-def right(i):
-    return (2<<1) + 1
-
 def heapify(alist, i, n):
     largest=i
-    l=left(i)
-    r=right(i)
 
-    if l <= n and alist[l] > alist[i]:
-        largest=l
+    left = (i<<1)
+    right = (i<<1) + 1
+
+    if left < n and alist[left] > alist[i]:
+        largest=left
     else:
         largest=i
 
-    if r <= n and alist[r] > alist[largest]:
-        largest=r
+    if right < n and alist[right] > alist[largest]:
+        largest=right
 
     if largest != i:
         alist[i], alist[largest] = alist[largest], alist[i]
-        heapify(alist, largest, len(alist)-1)
+        heapify(alist, largest, len(alist))
 
 def buildheap(alist, n):
     for i in range(n/2, -1, -1):
-        heapify(alist, i, len(alist)-1)
+        heapify(alist, i, n)
 
-def heapsort(list):
-    for item in list:
-        print item
-    return list
+def heapsort(alist):
+    slist=[]
+    buildheap(alist, len(alist))
+    
+    for i in range(len(alist), 0, -1):
+        slist.append(alist.pop(0))
+        heapify(alist, 0, len(alist))
+
+    return slist
+
 def main():
-    global data
-    #data = [int(data.strip()) for data in open('../../data/numlist10.txt')]
     data=[2,1,5,4,10,3]
+    buildheap(data, len(data))
     print data
-    buildheap(data, len(data)-1)
-    #sdata = heapsort(data)
-    print data
+    
+    sdata = heapsort(data)
+    print sdata
 
 if __name__=='__main__':
     main()

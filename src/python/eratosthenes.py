@@ -1,16 +1,22 @@
 #!/bin/env python
 
-#mainly for sys.argv[], sys.argv[0] is the name of the program
-import sys
-
-#mainly for arrays
-import numpy as np
 
 #ToDo
-def erato (data):
-   print "implement eratosthenes sieve" 
+def erato (bound):
+    """
+    compute primes by Eratosthenes algorithm
+    """
 
-if __name__=='__main__':
+    primecandidates = [True] * bound
+    primecandidates[0] = primecandidates[1] = False
+    
+    for p in xrange(2, len(primecandidates)):
+        if primecandidates[p]:
+            yield p
+        for x in xrange(p*p, bound, p):
+            primecandidates[x] = False
+
+
+if __name__ == '__main__':
     #call the routine you'd like to run as main
-    data = np.loadtxt("../../data/numlist100.txt")
-    erato ()
+   print list(erato(10000))

@@ -16,7 +16,8 @@ def heapify(alist, i, n):
 
     if largest != i:
         alist[i], alist[largest] = alist[largest], alist[i]
-        heapify(alist, largest, len(alist))
+        #heapify(alist, largest, len(alist))
+        heapify(alist, largest, n)
 
 def buildheap(alist, n):
     for i in range(n/2, -1, -1):

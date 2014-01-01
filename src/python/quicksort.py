@@ -10,7 +10,7 @@ def quicksort(array, lower, upper):
 
 def partition(array, lower, upper):
     
-    pivot=array[upper] # why it does not work when pivot is lower?
+    pivot=array[upper] 
     splitter=lower - 1
     
     for end in xrange(lower, upper):

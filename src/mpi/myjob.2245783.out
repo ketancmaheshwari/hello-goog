@@ -1,0 +1,6 @@
+TACC: Starting up job 2245783
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+pi is approximately 3.1415927369231262, Error is 0.0000000833333331
+ 
+TACC: Shutdown complete. Exiting.

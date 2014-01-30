@@ -1,0 +1,7 @@
+##compile openmp code using cc
+
+ cc -fopenmp hello.c
+
+## using intel compiler -- performance efficient
+
+  icc -openmp hello.c

@@ -1,0 +1,9 @@
+#!/bin/tcsh
+#SBATCH -J gpu_hellocuda        # Job Name
+#SBATCH -o hellocuda.o%j    # Output and error file name
+#SBATCH -n 1                # Total number of GPUs requested
+#SBATCH -p gpudev           # Queue name, can use gpu
+#SBATCH -t 00:10:00         # Run time (hh:mm:ss)
+#SBATCH -A TG-EAR130015
+
+./hellocuda

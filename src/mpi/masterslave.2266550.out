@@ -1,0 +1,22 @@
+TACC: Starting up job 2266550
+TACC: Setting up parallel environment for MVAPICH2+mpispawn.
+TACC: Starting parallel tasks...
+I am slave and my rank is 8.
+I am slave and my rank is 11.
+I am slave and my rank is 14.
+I am slave and my rank is 9.
+I am slave and my rank is 4.
+I am slave and my rank is 6.
+I am slave and my rank is 13.
+I am slave and my rank is 12.
+I am slave and my rank is 15.
+I am slave and my rank is 5.
+I am slave and my rank is 3.
+I am slave and my rank is 10.
+I am master and my rank is 0.
+I am slave and my rank is 2.
+In total, we're 16 processes.
+I am slave and my rank is 7.
+I am slave and my rank is 1.
+ 
+TACC: Shutdown complete. Exiting.

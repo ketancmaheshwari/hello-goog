@@ -1,0 +1,2 @@
+mpicc computepi.c
+mpirun -np 2 a.out

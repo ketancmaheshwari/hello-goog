@@ -5,7 +5,7 @@ int main(){
   
   long double *now;
   long double new_mem;
-  void create(long double*);
+  void create();
 
   now = (long double *)malloc (sizeof(new_mem));
   create(now);
@@ -13,6 +13,6 @@ int main(){
   return 0;
 }
 
-void create(long double * anow){
+void create(){
  printf("awesome stuff here\n");
 }

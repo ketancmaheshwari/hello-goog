@@ -1,0 +1,43 @@
+06:14:27.9 starting web server<br>
+06:14:33.3 Initializing Spring framework Logs<br>
+Oct 18, 2013 6:14:33 AM org.apache.catalina.startup.Embedded start<br>
+INFO: Starting tomcat server<br>
+Oct 18, 2013 6:14:34 AM org.apache.catalina.core.StandardEngine start<br>
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.32<br>
+Oct 18, 2013 6:14:35 AM org.apache.catalina.startup.ContextConfig <br>efaultWebConfig
+INFO: No default web.xml<br>
+Oct 18, 2013 6:14:38 AM org.apache.catalina.session.StandardManager doLoad<br>
+SEVERE: IOException while loading persisted sessions: <br>java.io.WriteAbortedException: writing aborted; <br>java.io.NotSerializableException: ads.doc.backoffice.StoreInfos<br>
+java.io.WriteAbortedException: writing aborted; <br>java.io.NotSerializableException: ads.doc.backoffice.StoreInfos
+    at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1354)<br>
+    at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1990)
+    at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1915)
+...... <br>
+...... <br>
+...... <br>
+...... <br>
+    at ads.tools.AppServerMain.main(AppServerMain.java:83)<br>
+Caused by: java.io.NotSerializableException: ads.doc.backoffice.StoreInfos<br>
+INFO: Jk running ID=0 time=0/105  config=null<br>
+06:14:48.6 Starting exporter server<br>
+06:14:48.6 starting cron server<br>
+03:19:13.4 Begin summary update for ads.doc.inventory.InventoryItemSummary
+03:19:33.9 CronServer:: DailyJob ads.tools.UpdateSummaries@17c5d6cf failed with exception ads.util.AppError: Cannot create UnitName from keys: Each
+ads.util.AppError: Cannot create UnitName from keys: Each
+at ads.db.DBObjectDefault.createFromKeys(DBObjectDefault.java:42)
+at ads.db.DBTable.createFromKeys(DBTable.java:227)
+at ads.db.DBValue.getValue(DBValue.java:621)
+at ads.dbmanager.DBObjectsManager.initObjects(DBObjectsManager.java:400)
+at ads.dbmanager.DBObjectsManager.reload(DBObjectsManager.java:447)
+at ads.dbmanager.DBObjectsManager.loadFromStore(DBObjectsManager.java:497)
+at ads.doc.inventory.InventoryItemSummary.refreshSince(InventoryItemSummary.java:173)
+at ads.db.DBSummaryTable.refreshAll(DBSummaryTable.java:67)
+at ads.tools.CronServer$DailyThread.run(CronServer.java:271)
+[SOAPException: faultCode=SOAP-ENV:Client; msg=Error opening socket: java.net.ConnectException: Connection refused; targetException=java.lang.IllegalArgumentException: Error opening socket: java.net.ConnectException: Connection refused]
+at org.apache.soap.transport.http.SOAPHTTPConnection.send(SOAPHTTPConnection.java:354)
+at org.apache.soap.rpc.Call.invoke(Call.java:248)
+at ads.support.SupportCall.call(SupportCall.java:56)
+at ads.tools.SupportThread.run(SupportThread.java:101)
+03:46:42.5 Periodic support request failed: ads.support.SupportException: Error opening socket: java.net.ConnectException: Connection refused
+06:31:36.1 Upload failed: java.io.FileNotFoundException: c:/tmp/cygwin1.dll (No such file or directory)
+08:01:08.0 connect from /172.22.3.28

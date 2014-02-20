@@ -1,6 +1,0 @@
-   PotA  PotB  PotC  PotD  PotE
-A   +     +     +     +     +
-B   -     ?     +     +     ?
-C   +     +     +     +     +
-D   +     -     +     -     +
-E   +     +     +     +     +

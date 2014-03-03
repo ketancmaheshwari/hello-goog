@@ -8,20 +8,19 @@ struct node {
     struct node* prev;
     struct node* next;  
 };
-typedef struct node node;
 
 /* start main */
 int main(void){
 
-void create(node* p);
-int count(node* p);
-void print(node* p);
+void create(struct node* p);
+int count(struct node* p);
+void print(struct node* p);
 
 int numitems;
 
-node* head;
+struct node* head;
 printf ("Test\n");
-head = (node *)malloc(sizeof(node));
+head = (struct node *)malloc(sizeof(struct node));
 create(head);
 print(head);
 numitems = count(head);
@@ -30,7 +29,7 @@ printf("\nThere are %d items in the list\n", numitems);
 return 0;
 }
 
-void create(node* list){
+void create(struct node* list){
     printf("Input a number (-999 at end):\n");
     scanf("%d", &list->item);
 
@@ -38,13 +37,13 @@ void create(node* list){
         list -> next = NULL;
     }
     else{
-        list->next = (node *)malloc (sizeof(node));
+        list->next = (struct node *)malloc (sizeof(struct node));
         create(list->next); /* recursive call to create */
     }
     return;
 }
 
-void print(node* list){
+void print(struct node* list){
     if (list -> next != NULL){
         printf("%d ", list->item);
         if (list -> next -> next == NULL){
@@ -55,7 +54,7 @@ void print(node* list){
 return;
 }
 
-int count(node* list){
+int count(struct node* list){
     if (list -> next == NULL)
         return (0);
     else

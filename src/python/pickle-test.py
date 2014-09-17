@@ -1,15 +1,12 @@
-#!/bin/env python
+#!/usr/bin/env python
 
 #mainly for sys.argv[], sys.argv[0] is the name of the program
 import sys
-import pickle
+import cPickle as pickle
 
-#mainly for arrays
-import numpy as np
-
-def d (name, outfile):
+def dopickle (name, outfile):
     pickle.dump(name, outfile)
 
 if __name__=='__main__':
     #call the routine you'd like to run as main
-    d (sys.argv[1], open('hello.txt', 'w'))
+    dopickle (sys.argv[1], open('hello.txt', 'w'))

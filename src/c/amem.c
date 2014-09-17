@@ -14,5 +14,5 @@ int main(){
 }
 
 void create(){
- printf("awesome stuff here\n");
+ printf("some stuff here\n");
 }

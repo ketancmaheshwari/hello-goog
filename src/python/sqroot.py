@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 
 #mainly for sys.argv[], sys.argv[0] is the name of the program
 import sys
@@ -11,7 +11,7 @@ def sqroot(anum):
     """
     try:
         initguess=anum/2.
-        epsilon=0.0001
+        epsilon=0.000001
         diff=initguess
         newres=0
 
@@ -27,4 +27,4 @@ def sqroot(anum):
 
 if __name__=='__main__':
     init, new = sqroot(float(sys.argv[1]))
-    print init, new
+    print new

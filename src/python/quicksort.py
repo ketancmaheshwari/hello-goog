@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def quicksort(array, lower, upper):
     if lower >= upper:
         return
@@ -8,19 +9,21 @@ def quicksort(array, lower, upper):
     quicksort(array, lower, pivot_pos - 1)
     quicksort(array, pivot_pos + 1, upper)
 
+
 def partition(array, lower, upper):
-    
-    pivot=array[upper] 
-    splitter=lower - 1
-    
+
+    pivot = array[upper]
+    splitter = lower - 1
+
     for end in xrange(lower, upper):
         if array[end] <= pivot:
             splitter = splitter + 1
             if splitter != end:
-                array[splitter],array[end]=array[end],array[splitter]
-    
-    array[splitter+1], array[upper] = array[upper], array[splitter+1]
-    return splitter+1
+                array[splitter], array[end] = array[end], array[splitter]
+
+    array[splitter + 1], array[upper] = array[upper], array[splitter + 1]
+    return splitter + 1
+
 
 def quicksort2(array):
     lo = []
@@ -38,17 +41,19 @@ def quicksort2(array):
 
     return quicksort2(lo) + [pivot] + quicksort2(up)
 
+
 def quicksortiter(array):
     return array
 
+
 def main():
-    data = [9,5,7,10,12,18,21,6,15]
+    data = [9, 5, 7, 10, 12, 18, 21, 6, 15]
     print data
-    quicksort(data, 0, len(data)-1)
+    quicksort(data, 0, len(data) - 1)
     print data
     dsorted = quicksort2(data)
 
     print dsorted
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()

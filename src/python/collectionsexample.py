@@ -3,6 +3,7 @@
 import itertools
 import collections
 
+
 def read_table(filename):
     with open(filename) as fp:
         header = next(fp).split()
@@ -15,11 +16,10 @@ table = read_table("../../data/colldata.txt")
 pots = sorted(table)
 
 alphabet = "+-?"
-for num in range(2, len(table)+1):
+for num in range(2, len(table) + 1):
     for group in itertools.combinations(pots, num):
         patterns = zip(*[table[p] for p in group])
         counts = collections.Counter(patterns)
         for poss in itertools.product(alphabet, repeat=num):
             print ', '.join(group) + ':',
             print ''.join(poss), counts[poss]
-

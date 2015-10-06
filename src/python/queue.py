@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
+
 class Queue(object):
+
     def __init__(self):
         self.items = []
 
@@ -8,13 +10,13 @@ class Queue(object):
         return self.items == []
 
     def enqueue(self, item):
-        self.items.insert(0,item)
+        self.items.insert(0, item)
 
     def dequeue(self):
         return self.items.pop()
 
     def size(self):
-        return len(self.items)        
+        return len(self.items)
 
     def display(self):
         return self.items
@@ -27,7 +29,7 @@ if __name__ == '__main__':
     myq.enqueue(300)
     myq.enqueue('hi')
 
-    #print myq.size()
+    # print myq.size()
 
     print myq.dequeue()
     myq.enqueue(300)

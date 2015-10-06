@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def hist(aword):
     d = {}
     for c in aword:
@@ -9,6 +10,7 @@ def hist(aword):
             d[c] = 1
     #sorted(d, key=d.get)
     return d
+
 
 def main():
     print hist('hello world')

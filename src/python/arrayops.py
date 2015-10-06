@@ -2,11 +2,11 @@
 
 import numpy as np
 
-#controls printing array corners
-#np.set_printoptions(threshold='nan')
+# controls printing array corners
+# np.set_printoptions(threshold='nan')
 
-zero=np.zeros(10)
-one=np.ones(20)
+zero = np.zeros(10)
+one = np.ones(20)
 
 print zero
 print one

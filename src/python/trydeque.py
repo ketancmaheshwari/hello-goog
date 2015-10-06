@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
+
 class Deque(object):
     """
     Implements a deque
     """
+
     def __init__(self):
         self.items = []
 
@@ -15,7 +17,7 @@ class Deque(object):
 
     def addrear(self, item):
         self.items.insert(0, item)
-    
+
     def removefront(self):
         return self.items.pop()
 
@@ -24,6 +26,7 @@ class Deque(object):
 
     def size(self):
         return len(self.items)
+
 
 def main():
     myd = Deque()

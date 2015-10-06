@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def create2dimlist(N):
     grid = []
     for outer in range(N):

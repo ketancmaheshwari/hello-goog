@@ -2,14 +2,14 @@
 
 import sys
 
-#still buggy
+# still buggy
 
-binum=""
+binum = ""
 
-decnum=int(sys.argv[1])
+decnum = int(sys.argv[1])
 print decnum
 while decnum > 0:
-    binum=binum + str(decnum % 2)
+    binum = binum + str(decnum % 2)
     decnum = decnum / 2
 
 print binum[::-1]

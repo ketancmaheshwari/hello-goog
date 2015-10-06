@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+
 def walkfiles(apath, apattern=None):
     for dir, dirlist, filelist in os.walk(apath):
         for fname in filelist:
@@ -7,7 +8,7 @@ def walkfiles(apath, apattern=None):
                 continue
             yield os.path.join(dir, fname)
 
-if __name__  ==  '__main__':
+if __name__ == '__main__':
     import os
     import fnmatch
     ar = walkfiles('/home/kcm92/hello-goog', '*.txt')

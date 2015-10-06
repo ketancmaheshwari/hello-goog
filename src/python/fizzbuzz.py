@@ -2,6 +2,7 @@
 
 import sys
 
+
 def fizzbuzz():
     for i in xrange(10):
         if i % 3 == 0:
@@ -10,6 +11,6 @@ def fizzbuzz():
             print 'buzz'
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     print 'hello'
     fizzbuzz()

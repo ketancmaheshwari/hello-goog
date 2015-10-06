@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 
 # Assume the left and right lists are sorted
+
+
 def merge(left, right):
     result = list()
-    i ,j = 0, 0
+    i, j = 0, 0
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
             result.append(left[i])
@@ -11,10 +13,11 @@ def merge(left, right):
         else:
             result.append(right[j])
             j += 1
-    #one of the left and right exhausted here
+    # one of the left and right exhausted here
     result += left[i:]
     result += right[j:]
     return result
+
 
 def mergesort(list):
     if len(list) < 2:
@@ -24,10 +27,11 @@ def mergesort(list):
     right = mergesort(list[middle:])
     return merge(left, right)
 
+
 def main():
     data = [int(data.strip()) for data in open('../../data/numlist10.txt')]
     sdata = mergesort(data)
     print sdata
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main()

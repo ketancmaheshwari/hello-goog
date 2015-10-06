@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
+
 class astack(object):
+
     def __init__(self):
-        self.container=[]
+        self.container = []
 
     def size(self):
         return len(self.container)
@@ -15,9 +17,9 @@ class astack(object):
 
     def display(self):
         print self.container
-        
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     mystack = astack()
 
     mystack.push(100)
@@ -27,4 +29,3 @@ if __name__=='__main__':
 
     mystack.pop()
     mystack.display()
-

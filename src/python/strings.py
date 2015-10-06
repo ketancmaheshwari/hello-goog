@@ -2,9 +2,9 @@
 
 
 def hello_user(name):
-    print 'Hello there '+ name
+    print 'Hello there ' + name
 
-#call the routine you'd like to run as main
+# call the routine you'd like to run as main
 if __name__ == '__main__':
     import sys
     import numpy as np
@@ -12,4 +12,3 @@ if __name__ == '__main__':
     multilinestring = """This is a
                       multiline string"""
     print multilinestring
-

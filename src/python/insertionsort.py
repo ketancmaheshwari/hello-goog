@@ -2,25 +2,26 @@
 
 import numpy as np
 
-#controls printing array corners
-#np.set_printoptions(threshold='nan')
+# controls printing array corners
+# np.set_printoptions(threshold='nan')
 
-#insertion sort according to the Cormen book
+# insertion sort according to the Cormen book
 
 # read file into a numpy array
 data = np.loadtxt('../data/numlist10.txt')
 
 print "unsorted data:", data
 
-def insertionsort (data):
+
+def insertionsort(data):
     for j in range(1, len(data)):
-        key=data[j]
-        i=j-1
+        key = data[j]
+        i = j - 1
         while i >= 0 and (data[i] > key):
-            data[i+1] = data[i]
+            data[i + 1] = data[i]
             data[i] = key
             i = i - 1
 
 if __name__ == "__main__":
-    insertionsort (data)
+    insertionsort(data)
     print "sorted data:", data

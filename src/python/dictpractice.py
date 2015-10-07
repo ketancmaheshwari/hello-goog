@@ -2,6 +2,17 @@
 
 import random
 import time
+import string
+import subprocess
+
+#create t.txt
+tfile = open("t.txt", "w")
+n=100000
+
+for i in xrange(n):
+    tfile.write(str(random.randint(1,1000))+" "+''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(8))+"\n")
+
+tfile.close()
 
 mydict = {}
 
@@ -14,19 +25,15 @@ mydict = {}
 for line in open('t.txt'):
     k, v = line.split()
     mydict[int(k)] = v
-# print it
-# print mydict
 
-# add an element to dict
-mydict[-999] = 'atestvalue'
-
-print mydict.get(random.randint(1, 1000000))
+print mydict.get(random.randint(1, n))
 
 # iteritems() iterkeys() itervalues()
 # for key, value in mydict.iteritems():
 #    print "The value %s is for key %d ..." % (value, key)
 
 # popitem
+
 print '3 popitem calls'
 print mydict.popitem()
 print mydict.popitem()
@@ -42,4 +49,8 @@ starttime = time.clock()
 mydict.clear()
 delta = time.clock() - starttime
 
-print "it took %f seconds to clear a million items from mem" % delta
+print "It took %f seconds to clear %d items from mem" % (delta, n)
+
+print "Deleting tfile"
+
+subprocess.call(["rm", "t.txt"])

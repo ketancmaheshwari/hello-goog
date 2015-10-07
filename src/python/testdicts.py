@@ -6,5 +6,6 @@ prices = [54.3]
 navs = {}
 for (portfolio, equity, position) in data:
     navs.setdefault(portfolio, 0)
-    #navs[portfolio] += position * prices[0]
+    navs[portfolio] += position * prices[0]
 print navs
+

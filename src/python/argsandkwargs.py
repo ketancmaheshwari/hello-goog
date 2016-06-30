@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/usr/bin/env python
 
 # mainly for sys.argv[], sys.argv[0] is the name of the program
 import sys
